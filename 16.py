@@ -11,12 +11,12 @@ image_data = pd.read_excel('D:\\8.xls', header=None)  # 使用read_excel()函数
 # 清理image_data中的数据，确保每个base64编码字符串都是有效的
 image_data[0] = image_data[0].str.strip()  # 清理字符串两端的空格
 
-# 定义一个函数来将base64编码的图像数据解码为图像对象
+# 定义一个函数来将base64编码的图像数据解码为
 def decode_image(base64_string):
     # 此处不做解码，直接返回编码字符串
     return base64_string
 
-# 不再解码图像数据
+# 不再解码图像
 image_data['decoded_data'] = image_data[0].apply(decode_image)
 
 # 提取n-gram特征
@@ -40,10 +40,10 @@ clf = HistGradientBoostingClassifier(random_state=42)
 clf.fit(X_train, y_train)
 
 
-# 在测试集上评估模型
-#y_pred = clf.predict(X_test)
-#accuracy = accuracy_score(y_test, y_pred)
-#print("Accuracy:", accuracy)
+#在测试集上评估模型
+y_pred = clf.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
 user_input_base64 = input("请输入您要判断的 base64 编码：")
 
 # 使用模型进行预测
