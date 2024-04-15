@@ -13,7 +13,7 @@ image_data[0] = image_data[0].str.strip()  # 清理字符串两端的空格
 
 # 定义一个函数来将base64编码的图像数据解码为图像对象
 def decode_image(base64_string):
-    # 此处不做解码，直接返回编码字符串
+
     return base64_string
 
 # 不再解码图像数据
