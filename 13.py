@@ -38,7 +38,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # 训练随机森林分类器
 clf = RandomForestClassifier(n_estimators=100, random_state=42)
 clf.fit(X_train, y_train)
-
+##
 # 在测试集上评估模型
 #y_pred = clf.predict(X_test)
 #accuracy = accuracy_score(y_test, y_pred)
